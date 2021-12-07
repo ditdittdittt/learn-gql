@@ -1,0 +1,38 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type Query {
+  Read: ReadResponse!
+}
+
+type Mutation {
+  Create(Name: String!): CreateResponse!
+  Update(ID: String!, Name: String!): UpdateResponse!
+  Delete(ID: String!): DeleteResponse!
+}
+
+type Product {
+  ID: String!
+  Name: String!
+}
+
+type ReadResponse {
+  Products: [Product]!
+  ResponseCode: Int!
+}
+
+type CreateResponse {
+  ID: String!
+  ResponseCode: Int!
+}
+
+type UpdateResponse {
+  ID: String!
+  Name: String!
+  ResponseCode: Int!
+}
+
+type DeleteResponse {
+  ResponseCode: Int!
+}
